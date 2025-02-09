@@ -1,0 +1,57 @@
+
+@use "./variables" as * ;
+
+// Media Queries
+
+@mixin TypeMedia($media) {
+    @if ($media == small ) {
+        @media (max-width: 991px) {
+            @content;
+        }
+    }@else if ($media == medium ) {
+        @media (min-width: 992px) and (max-width: 1199px) {
+            @content;
+        }
+    }@else if ($media == large ) {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+}
+
+// absoluteCenter
+@mixin absoluteCenter {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+// TRANSITION PROPERTY 
+@mixin transitionProperty {
+    transition-duration: 1s;
+    transition-property: all;
+}
+
+// Animation Mixin
+// Auto Add Animation To properties
+@mixin keyFrame($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content ;
+    }
+    @keyframes #{$animation-name} {
+        @content ;
+    }
+}
+
+@mixin width-border($width,$border) {
+    width: $width;
+    height: $width;
+    border-radius: $border;
+}
+
+// font
+@mixin font($size,$weight) {
+    font-size: $size;
+    font-weight: $weight;
+}

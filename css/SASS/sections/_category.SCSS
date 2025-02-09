@@ -1,0 +1,75 @@
+@use "../helper/variables" as *;
+@use "../helper/mixins" as *;
+
+// start Category Section
+.category-section {
+    .category-item-container {
+        align-items: center;
+        gap: 10px;
+        overflow: auto hidden;
+        scroll-snap-type: inline mandatory;
+        overscroll-behavior-inline: contain;
+
+        .category-item {
+            min-width: 100%;
+
+            @include TypeMedia(large) {
+                min-width: calc(25% - 10px);
+            }
+
+            @include TypeMedia(medium) {
+                min-width: calc(33.33% - 10px);
+            }
+
+            @media (min-width: 667px) and (max-width: 992px) {
+                min-width: calc(50% - 10px);
+            }
+
+            align-items: center;
+            gap: 10px;
+            padding: 15px;
+            border: $border-1;
+            border-radius: 15px;
+            scroll-snap-align: start;
+
+            .category-img-box {
+                background-color: $cultured;
+                padding: 10px;
+                border: $border-1;
+                border-radius: 15px;
+
+                img {
+                    width: 30px;
+                }
+            }
+
+            .category-content-box {
+                width: 100%;
+
+                .category-content-flex {
+                    align-items: center;
+                    margin-top: 6px;
+
+                    .category-item-title {
+                        color: $eerie-black;
+                        @include font(0.8rem, 600);
+                        text-transform: uppercase;
+                    }
+
+                    .category-item-amount {
+                        color: $sonic-silver;
+                        font-size: 0.8rem;
+                    }
+                }
+
+                .category-btn {
+                    color: var(--salmon-pink);
+                    @include font(0.85rem, 600);
+                    text-transform: capitalize;
+                    padding-top: 0;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}

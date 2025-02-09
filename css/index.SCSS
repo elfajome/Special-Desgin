@@ -1,0 +1,140 @@
+// Well, we can retrieve all the SCSS files used on the page for you.
+
+@use "./SASS/helper/variables" as *;
+@use "./SASS/helper/mixins" as *;
+@use "./SASS/sections/navbar";
+@use "./SASS/sections/signIn";
+@use "./SASS/sections/intro_section";
+@use "./SASS/sections/overlayAndSettings";
+@use "./SASS/sections/category";
+@use "./SASS/sections/products";
+@use "./SASS/sections/testimonialAndServices";
+@use "./SASS/sections/blog";
+@use "./SASS/sections/footer";
+
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.has-scrollbar {
+    padding-bottom: 10px;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+    width: 9px;
+    /* for vertical scroll */
+    height: 9px;
+    /* for horizontal scroll */
+}
+
+.has-scrollbar::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 90%);
+    border-radius: 20px;
+}
+
+.has-scrollbar:hover::-webkit-scrollbar-thumb {
+    background: var(--salmon-pink);
+}
+
+
+.mobile-bottom-navigation {
+    @include TypeMedia(medium) {
+        display: none;
+    }
+
+    @include TypeMedia(large) {
+        display: none;
+    }
+
+    background-color: $white;
+    border-radius: 15px 15px 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px 0;
+    z-index: 999;
+
+    button {
+        position: relative;
+        font-size: 26px;
+        color: $eerie-black;
+        padding: 10px;
+
+        a {
+            color: $eerie-black;
+        }
+
+        .heartandshop::after {
+            content: "";
+            position: absolute;
+            top: 10px;
+            @include width-border(12px, 50%);
+            background-color: var(--salmon-pink);
+        }
+    }
+}
+
+/* Start Nav Bullets */
+.nav-bullets {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    z-index: 1001;
+
+    .bullet {
+        width: 20px;
+        height: 20px;
+        border: 3px solid var(--salmon-pink);
+        margin: 20px auto;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+
+        .tooltip-hover {
+            position: absolute;
+            right: 32px;
+            top: -10px;
+            width: 120px;
+            background-color: var(--salmon-pink);
+            color: $white;
+            padding: 8px 10px;
+            text-align: center;
+            cursor: default;
+            pointer-events: none;
+            display: none;
+
+            &::after {
+                content: "";
+                border-style: solid;
+                border-width: 10px;
+                border-color: transparent transparent transparent var(--salmon-pink);
+                height: 0;
+                width: 0;
+                position: absolute;
+                right: -20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        &:hover .tooltip-hover {
+            display: block;
+        }
+    }
+}
+
+/* End Nav Bullets */

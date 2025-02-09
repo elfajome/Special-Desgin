@@ -1,0 +1,107 @@
+// start declare variable and mixins
+@use "./SASS/helper/variables" as *;
+@use "./SASS/helper/mixins" as *;
+
+
+.footer {
+    background-color: $eerie-black;
+    padding: 4rem 0 2rem;
+    a {
+        text-decoration: none;
+    }
+    .footer-category {
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #5d5c5c;
+        .footer-title {
+            color: var(--salmon-pink);
+            text-transform: uppercase;
+            @include font(1.22rem,600);
+            margin-bottom: 15px;
+        }
+        .footer-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            column-gap: 20px;
+            row-gap: 3px;
+            margin-bottom: 15px;
+            .footer-box-title {
+                color: $spanish-gray;
+                @include font(0.9rem,600);
+                text-transform: uppercase;
+            }
+            .footer-category-link {
+                color: $sonic-silver;
+                @include font(0.76rem,600);
+                text-transform: capitalize;
+                transition: $transition-3;
+                &:hover {
+                    color: $spanish-gray;
+                }
+            }
+        }
+    }
+    .footer-nav {
+        padding: 30px 0;
+        border-bottom: 1px solid #5d5c5c ;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .footer-nav-list {
+                .footer-nav-item {
+                    padding: 3px 0;
+                    .nav-title {
+                        position: relative;
+                        color: $white;
+                        @include font(1rem,600);
+                        text-transform: uppercase;
+                        margin-bottom: 15px;
+                        padding-bottom: 8px;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            background: var(--salmon-pink);
+                            width: 60px;
+                            height: 2px;
+                        }
+                    }
+                    .footer-nav-link {
+                        width: max-content;
+                        color: $sonic-silver;
+                        font-size: 1rem;
+                        text-transform: capitalize;
+                        transition: $transition-3;
+                        &:hover {
+                            color: var(--salmon-pink) ;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer-bottom {
+        margin: 3rem 0 0 ;
+        text-align: center;
+        .payment-img {
+            max-width: 335px;
+            width: 100%;
+            margin: auto;
+            margin-bottom: 15px;
+        }
+        .copyright {
+            color: $sonic-silver;
+            @include font(.9rem,600);
+            text-transform: capitalize;
+            letter-spacing: 1.2px;
+            a {
+                display: inline;
+                color: inherit;
+            }
+        }
+    }
+}

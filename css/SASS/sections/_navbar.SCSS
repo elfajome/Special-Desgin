@@ -1,0 +1,100 @@
+
+@use "../helper/variables" as * ;
+@use "../helper/mixins" as * ;
+
+
+nav {
+    border-bottom: $border-1;
+    .social-navbar {
+        a {
+            background-color: $cultured;
+            color: var(--i);
+            border-radius: 5px;
+            transition: $transition-3;
+            &:hover {
+                background-color: var(--i);
+                color: $white;
+            }
+        }
+    }
+    .shopOffer-navbar {
+        color: $sonic-silver;
+        font-size: 13px;
+        letter-spacing: 1px;
+        @include TypeMedia(small) {
+            display: none;
+        }
+    }
+    .sign-navbar {
+        a {
+            background-color: var(--salmon-pink);
+            color: $white;
+            font: {
+                size: 14px;
+                weight: 600;
+            }
+            transition: $transition-3;
+            &:hover {
+                border: 1px solid  var(--salmon-pink) ;
+                background-color: $white;
+                color: $sonic-silver;
+            }
+        }
+        .sign-up {
+            margin-right: 5px;
+            background-color: var(--salmon-pink) ;
+            &:hover {
+                border: 1px solid var(--salmon-pink) ;
+                background-color: $white;
+                color: $sonic-silver;
+            }
+        }
+    }
+}
+
+
+.navbar-2 {
+    border-bottom: $border-1;
+    .container {
+        @include TypeMedia(small) {
+            flex-direction: column !important;
+        }
+    }
+    .logo {
+        h2 {
+            font-weight: 800;
+            letter-spacing: 1.8px;
+            cursor: pointer;
+            &:hover {
+                color: $sandy-brown;
+            }
+        }
+    }
+    .search-navbar {
+        width: 65%;
+        input {
+            font-size: 16px;
+            color: $davys-gray;
+            opacity: 0.9;
+            padding: 10px 10px 10px 15px;
+        }
+    }
+    .icons-navbar {
+        @include TypeMedia(small) {
+            display: none;
+        }
+        a {
+            color: $spanish-gray ;
+            &:hover {
+                color: $blue;
+            }
+        }
+        .notes-nav::after {
+            content: "";
+            position: absolute;
+            top: 85px ;
+            @include width-border(12px,50%);
+            background-color: var(--salmon-pink);
+        }
+    }
+}

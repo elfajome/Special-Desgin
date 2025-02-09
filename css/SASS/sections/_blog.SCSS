@@ -1,0 +1,52 @@
+
+// declare Variable and mixins
+@use "./SASS/helper/variables" as *;
+@use "./SASS/helper/mixins" as *;
+
+
+// start blog
+.blog {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    .blog-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        @include TypeMedia(small) {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+        grid-gap: 15px;
+        .blog-card {
+            .blog-banner {
+                width: 100%;
+                border-radius: 15px;
+                margin-bottom: 1.2rem;
+            }
+            .blog-content {
+                a {
+                    text-decoration: none;
+                }
+                .blog-category {
+                    width: max-content;
+                    font-weight: 600;
+                    color: var(--salmon-pink);
+                }
+                .blog-title {
+                    @include font(1rem,600);
+                    color: $eerie-black;
+                    margin-bottom: 5px;
+                    transition: $transition-3;
+                    &:hover {
+                        color: var(--salmon-pink);
+                    }
+                }
+                .blog-meta {
+                    color: $sonic-silver;
+                    cite {
+                        font-style: normal;
+                        color: $davys-gray;
+                    }
+                }
+            }
+        }
+    }
+}
