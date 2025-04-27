@@ -1,2 +1,10 @@
-# Special-Desgin
-A responsive online clothing store with a modern design and smooth interactions. Built using HTML, CSS, SCSS, Bootstrap, JavaScript, and TypeScript, ensuring a user-friendly experience
+ # Special Design Website
+A responsive landing page with a toggle menu and smooth animations.
+
+## Technologies Used
+- HTML
+- CSS (with Media Queries)
+- JavaScript
+
+## Live Demo
+https://elfajome.github.io/Special-Desgin/
